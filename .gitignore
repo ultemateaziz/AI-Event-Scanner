@@ -1,0 +1,24 @@
+# Python environments
+venv/
+env/
+__pycache__/
+
+# Node.js dependencies
+node_modules/
+frontend/node_modules/
+
+# Environment variables
+.env
+frontend/.env
+
+# Media and Cache (so you don't upload giant photos/videos to github)
+database_photos/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.pkl
+
+# System files
+.DS_Store
+Thumbs.db

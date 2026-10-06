@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-dark: #0B0E14;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --accent: #00E5FF;
+  --accent-glow: rgba(0, 229, 255, 0.3);
+  --text-main: #FFFFFF;
+  --text-muted: #8A93A6;
+  --border-light: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 0% 0%, rgba(0, 229, 255, 0.05), transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(138, 43, 226, 0.05), transparent 40%);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-light);
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+}
+
+.premium-button {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  padding: 16px 32px;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.premium-button:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.premium-button.primary {
+  background: var(--text-main);
+  color: var(--bg-dark);
+  border: none;
+  font-weight: 600;
+}
+
+.premium-button.primary:hover {
+  background: var(--accent);
+  box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+.scanner-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+}
+
+.scanner-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 20px 4px var(--accent-glow), 0 0 40px 10px rgba(0, 229, 255, 0.2);
+  z-index: 10;
+}
+
+.scanner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 229, 255, 0) 0%, rgba(0, 229, 255, 0.1) 100%);
+  z-index: 9;
+  pointer-events: none;
+}
